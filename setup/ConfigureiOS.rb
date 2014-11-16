@@ -33,6 +33,16 @@ module Pod
         :prefix => prefix
       }).run
 
+      ["Core/CPDSymbol.h", "Core/CPDSymbol.m", "Core/UIFont+CPDSymbolFont.h", "Core/UIFont+CPDSymbolFont.m", "Core/UIImage+CPDSymbolFont.h", "Core/UIImage+CPDSymbolFont.m", "UI/CPDSymbolImageView.h", "UI/CPDSymbolImageView.m"].each do |file|
+        before = "./Pod/Classes/" + file
+        s = File.read(before, :encoding => Encoding::UTF_8)
+        s.gsub!("CPD", prefix)
+        s.gsub!("cpd", prefix.downcase)
+        File.write(before, s)
+        after = "./Pod/Classes/" + file.gsub("CPD", prefix)
+        File.rename before, after
+      end
+
       `mv ./templates/ios/* ./`
     end
   end

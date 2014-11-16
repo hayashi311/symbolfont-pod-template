@@ -5,12 +5,12 @@
 
 #import "UIFont+CPDSymbolFont.h"
 
-NSString *const kHRSymbolFontFamilyName = @"icons";
+NSString *const kCPDSymbolFontFamilyName = @"icons";
 
 @implementation UIFont (CPDSymbolFont)
 
 + (instancetype)cpd_symbolFontWithSize:(CGFloat)size {
-    UIFont *font = [UIFont fontWithName:kHRSymbolFontFamilyName size:size];
+    UIFont *font = [UIFont fontWithName:kCPDSymbolFontFamilyName size:size];
     return font;
 }
 

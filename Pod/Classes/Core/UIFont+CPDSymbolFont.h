@@ -5,7 +5,7 @@
 
 #import <UIKit/UIKit.h>
 
-extern NSString *const kHRSymbolFontFamilyName;
+extern NSString *const kCPDSymbolFontFamilyName;
 
 @interface UIFont (CPDSymbolFont)
 
