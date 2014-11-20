@@ -27,9 +27,7 @@ Pod::Spec.new do |s|
   s.platform     = :ios, '7.0'
   s.requires_arc = true
 
-  s.resource_bundles = {
-    '${POD_NAME}' => ['Pod/Assets/*.png']
-  }
+  s.resources = ['Pod/Assets/*.ttf']
 
   s.subspec 'Core' do |cs|
      cs.source_files = 'Pod/Classes/Core'
@@ -39,8 +37,6 @@ Pod::Spec.new do |s|
      us.source_files = 'Pod/Classes/UI'
   end
 
-  s.default_subspec = 'Core'
-  # s.public_header_files = 'Pod/Classes/**/*.h'
+  s.default_subspec = 'Core', 'UI'
   s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
 end
