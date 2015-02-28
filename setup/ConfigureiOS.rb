@@ -17,15 +17,16 @@ module Pod
 
       configurator.set_test_framework("specta")
 
-      loop do
-        prefix = configurator.ask("What is your class prefix")
-
-        if prefix.include?(' ')
-          puts 'Your class prefix cannot contain spaces.'.red
-        else
-          break
-        end
-      end
+      prefix = configurator.pod_name[0, 2]
+      # loop do
+      #   prefix = configurator.ask("What is your class prefix")
+      #
+      #   if prefix.include?(' ')
+      #     puts 'Your class prefix cannot contain spaces.'.red
+      #   else
+      #     break
+      #   end
+      # end
 
       Pod::ProjectManipulator.new({
         :configurator => @configurator,
