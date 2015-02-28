@@ -88,9 +88,9 @@ module Pod
       puts "\nRunning " + "pod install".magenta + " on your new library."
       puts ""
 
-      Dir.chdir("Example") do
-        system "pod install"
-      end
+      # Dir.chdir("Example") do
+      #   system "pod install"
+      # end
     end
 
     def clean_template_files
