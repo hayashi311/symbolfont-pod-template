@@ -19,7 +19,7 @@ NSString *const kCPDSymbolFontFamilyName = @"icons";
     UIFont *font = [UIFont fontWithName:kCPDSymbolFontFamilyName size:size];
     if (!font) {
         NSBundle* bundle = [NSBundle bundleForClass:[CPDBundleKey class]];
-        NSString *fontPath = [bundle pathForResource:kAASymbolFontFamilyName ofType:@"ttf"];
+        NSString *fontPath = [bundle pathForResource:kCPDSymbolFontFamilyName ofType:@"ttf"];
         NSData *inData = [NSData dataWithContentsOfFile:fontPath];
         CFErrorRef error;
         CGDataProviderRef provider = CGDataProviderCreateWithCFData((__bridge CFDataRef)inData);
@@ -31,7 +31,7 @@ NSString *const kCPDSymbolFontFamilyName = @"icons";
         }
         CFRelease(cgFont);
         CFRelease(provider);
-        font = [UIFont fontWithName:kAASymbolFontFamilyName size:size];
+        font = [UIFont fontWithName:kCPDSymbolFontFamilyName size:size];
     }
     return font;
 }
